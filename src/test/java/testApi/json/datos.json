@@ -1,1 +1,0 @@
-{ "nombre": "Juan", "edad": 30, "casado": true, "direccion": { "calle": "Calle 123", "ciudad": "Bogotá", "pais": "Colombia" }, "telefonos": [ { "tipo": "celular", "numero": "321 123 4567" }, { "tipo": "casa", "numero": "123 4567" } ] }

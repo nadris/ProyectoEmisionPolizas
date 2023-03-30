@@ -14,15 +14,21 @@ public class ObtainPolicyDocument {
     Response response;
     RequestInfo requestInfo = new RequestInfo();
     @Test
-    public void ObtainPolicy() {
-
-        /* GENERAR DOCUMENTO DE LA POLIZA */
-        requestInfo.setUrl(String.format(ApiConfiguration.OBTAIN_DOCUMENT_POLICY,"LPE0063045"));
-        requestInfo.setBody(body.toString());
-        response = FactoryRequest.make("get").send(requestInfo);
-        response.then().body("generado", Matchers.equalTo(true)).statusCode(200);;
+    public void GeneratePolicy() {
 
         /* NO SE PUDO GENERAR DOCUMENTO DE LA POLIZA*/
+
+        requestInfo.setUrl(String.format(ApiConfiguration.OBTAIN_DOCUMENT_POLICY,"NO-POLIZA"));
+        requestInfo.setBody(body.toString());
+        response = FactoryRequest.make("get").send(requestInfo);
+        response.then().body("generado", Matchers.equalTo(false)).statusCode(200);
+    }
+
+    @Test
+    public void NotGeneratePolicy() {
+
+        /* NO SE PUDO GENERAR DOCUMENTO DE LA POLIZA*/
+
         requestInfo.setUrl(String.format(ApiConfiguration.OBTAIN_DOCUMENT_POLICY,"NO-POLIZA"));
         requestInfo.setBody(body.toString());
         response = FactoryRequest.make("get").send(requestInfo);

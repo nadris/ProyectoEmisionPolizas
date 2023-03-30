@@ -24,4 +24,7 @@ Se utilizó:
 * Quiroga Uzquiano Luis Roberto
 * Sossa Never Adrian
 
+Tutorial allure
+https://www.swtestacademy.com/allure-report-junit/
+
 <br/>
